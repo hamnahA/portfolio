@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamnah Ansari | Tech Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact-styles.css">
+    <link rel="stylesheet" href="projects-styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto+Mono:wght@300;400;500;700&display=swap">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+
+</head>
+<body>
+    <div class="grid-overlay"></div>
+    
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-text">H.A<span class="blink">_</span></div>
+                <div class="logo-subtitle">// CODE ARCHITECT</div>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#hero" class="active">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#journey">JOURNEY</a></li>
+                    <li><a href="#projects">PROJECTS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero"id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="glitch-container">
+                        <h1 class="glitch" data-text="HAMNAH ANSARI">HAMNAH ANSARI</h1>
+                    </div>
+                    <div class="hero-subtitle">
+                        <span class="bracket">{</span>
+                        <span class="typing">A creative coder who loves UI surprises & tiny details.</span>
+                        <span class="bracket">}</span>
+                    </div>
+                </div>
+                <div class="avatar-container">
+                    <div class="avatar-frame">
+                        <div class="avatar-glow"></div>
+                        <img src="photo-output.jpeg" alt="Hamnah Ansari" class="avatar">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-heading-row">
+                <h2 class="section-title">ABOUT<span class="accent">_</span>ME</h2>
+                <h3 class="vibes-title">CURRENT<span class="accent">_</span>Vibes</h3>
+              </div>
+              
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="terminal-title">hamnah@portfolio:~/about</div>
+                        </div>
+                        <div class="terminal-body">
+                            <p><span class="prompt">$</span> I'm obsessed with crafting beautiful UIs, drinking chai while coding, and creating experiences people remember. Here's a tiny note from me to you <span class="emoji">💌</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="vibes">
+                    <!-- <h3 class="vibes-title">CURRENT<span class="accent">_</span>STATUS</h3> -->
+                    
+                    <!-- <div class="vibes-grid">
+                        <div class="vibe-card">
+                            <div class="card-header">
+                                <div class="card-icon">📚</div>
+                                <h4>CURRENT</h4>
+                            </div>
+                            <div class="card-content">
+                                <p>Interested in books</p>
+                            </div>
+                        </div>
+                        
+                        <div class="vibe-card">
+                            <div class="card-header">
+                                <div class="card-icon">🎵</div>
+                                <h4>PLAYING</h4>
+                            </div>
+                            <div class="card-content">
+                                <p>YouTube</p>
+                            </div>
+                        </div>
+                        
+                        <div class="vibe-card">
+                            <div class="card-header">
+                                <div class="card-icon">😊</div>
+                                <h4>MOOD</h4>
+                            </div>
+                            <div class="card-content">
+                                <p>Nice</p>
+                            </div>
+                        </div>
+                        
+                        <div class="vibe-card">
+                            <div class="card-header">
+                                <div class="card-icon">💭</div>
+                                <h4>THOUGHTS</h4>
+                            </div>
+                            <div class="card-content">
+                                <p>Hello world</p>
+                            </div>
+                        </div>
+                        
+                        <div class="vibe-card">
+                            <div class="card-header">
+                                <div class="card-icon">🎉</div>
+                                <h4>SURPRISE</h4>
+                            </div>
+                            <div class="card-content">
+                                <p>Fun fact or animation</p>
+                            </div>
+                        </div>
+                        
+                        <div class="vibe-card">
+                            <div class="card-header">
+                                <div class="card-icon">🧸</div>
+                                <h4>MASCOT</h4>
+                            </div>
+                            <div class="card-content">
+                                <p>Cute buddy vibes</p>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="vibes-grid" id="widget-container"></div>
+
+                    <div id="login" style="display:none; text-align:center; margin-bottom: 1rem;">
+                    <input type="email" id="email" placeholder="Email">
+                    <input type="password" id="password" placeholder="Password">
+                    <button onclick="login()">Login</button>
+                    <div id="toast">Edit mode enabled</div>
+
+                    </div>
+
+                    <div id="logoutBtn" style="display:none; text-align:center; margin-top: 1rem;">
+                    <button onclick="logout()">Logout</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="journey" id="journey">
+        <div class="container">
+            <h2 class="section-title">MY<span class="accent">_</span>JOURNEY</h2>
+            
+            <!-- Initial loading state -->
+            <div class="journey-preview" id="journey-preview">
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+                <p>LOADING TIMELINE DATA...</p>
+                <button class="cyber-button" id="view-journey-btn">
+                    <span class="cyber-button-text">VIEW FULL JOURNEY</span>
+                </button>
+            </div>
+            
+            <!-- Timeline content (hidden initially) -->
+            <div class="journey-container" id="journey-timeline" style="display: none;">
+                <div class="timeline-header">
+                    <div class="timeline-controls">
+                        <button class="control-btn minimize-btn" id="minimize-journey-btn" title="Minimize">
+                            <span></span>
+
+                        </button>
+                        
+                        <div class="timeline-status">
+                            <span class="status-dot"></span>
+                            <span class="status-text">TIMELINE ACTIVE</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="journey-timeline">
+                    <!-- Timeline items -->
+                    <div class="timeline-item unlocked">
+                        <div class="timeline-year">2019</div>
+                        <div class="timeline-icon">💻</div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 class="milestone-title">HTML Basics</h3>
+                                <div class="status-badge">
+                                    <span class="status-icon">✓</span>
+                                    <span class="status-text">[UNLOCKED]</span>
+                                </div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 100%"></div>
+                            </div>
+                            <p class="milestone-desc">Learned the fundamentals of HTML and web structure</p>
+                        </div>
+                    </div>
+    
+                    <div class="timeline-item unlocked">
+                        <div class="timeline-year">2020</div>
+                        <div class="timeline-icon">🎨</div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 class="milestone-title">CSS Mastery</h3>
+                                <div class="status-badge">
+                                    <span class="status-icon">✓</span>
+                                    <span class="status-text">[UNLOCKED]</span>
+                                </div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 100%"></div>
+                            </div>
+                            <p class="milestone-desc">Mastered CSS styling and responsive design techniques</p>
+                        </div>
+                    </div>
+    
+                    <div class="timeline-item unlocked">
+                        <div class="timeline-year">2021</div>
+                        <div class="timeline-icon">🚀</div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 class="milestone-title">First Project</h3>
+                                <div class="status-badge">
+                                    <span class="status-icon">✓</span>
+                                    <span class="status-text">[UNLOCKED]</span>
+                                </div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 100%"></div>
+                            </div>
+                            <p class="milestone-desc">Completed my first full-stack web application</p>
+                        </div>
+                    </div>
+    
+                    <div class="timeline-item in-progress">
+                        <div class="timeline-year">2023</div>
+                        <div class="timeline-icon">⚡</div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 class="milestone-title">Full-Stack Skills</h3>
+                                <div class="status-badge">
+                                    <span class="status-icon">⟳</span>
+                                    <span class="status-text">[IN PROGRESS]</span>
+                                </div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 75%"></div>
+                            </div>
+                            <p class="milestone-desc">Developing advanced full-stack development skills</p>
+                        </div>
+                    </div>
+    
+                    <div class="timeline-item locked">
+                        <div class="timeline-year">????</div>
+                        <div class="timeline-icon">🔒</div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 class="milestone-title">Dream Job</h3>
+                                <div class="status-badge">
+                                    <span class="status-icon">🔒</span>
+                                    <span class="status-text">[LOCKED]</span>
+                                </div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 0%"></div>
+                            </div>
+                            <p class="milestone-desc">Coming soon...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="compact-title">
+                <h2 class="section-title">MY<span class="accent">_</span>PROJECTS</h2>
+            </div>
+            <div class="projects-grid-container">
+                <div class="projects-grid">
+                    <!-- Projects will be loaded here -->
+                </div>
+                
+                <div class="projects-overlay">
+                    <div class="scanner-line"></div>
+                </div>
+            </div>
+            
+            <div class="project-detail-modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Project Title</h3>
+                        <button class="close-modal-btn">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="project-image-container">
+                            <img src="/placeholder.svg?height=300&width=500" alt="Project Screenshot" class="project-detail-image">
+                            <div class="image-glitch-overlay"></div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-description">
+                                <div class="terminal-style">
+                                    <div class="terminal-header">
+                                        <div class="terminal-buttons">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                        <div class="terminal-title">hamnah@portfolio:~/projects/details</div>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <p class="description-text">Project description will appear here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-meta">
+                                <div class="tech-stack">
+                                    <h4>TECH<span class="accent">_</span>STACK</h4>
+                                    <div class="tech-tags">
+                                        <!-- Tech tags will be added here -->
+                                    </div>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link live-link" target="_blank">
+                                        <span class="link-icon">🌐</span>
+                                        <span class="link-text">LIVE SITE</span>
+                                    </a>
+                                    <a href="#" class="project-link code-link" target="_blank">
+                                        <span class="link-icon">&#60;/&#62;</span>
+                                        <span class="link-text">VIEW CODE</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="compact-title">
+                <h2 class="section-title">CONTACT<span class="accent">_</span>ME</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="terminal-style">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="terminal-title">hamnah@portfolio:~/contact/info</div>
+                        </div>
+                        <div class="terminal-body">
+                            <p><span class="prompt">$</span> Let's connect! Send me a message and I'll get back to you as soon as possible.</p>
+                            <p><span class="prompt">$</span> You can also reach me through the following channels:</p>
+                            <div class="contact-channels">
+                                <div class="contact-channel">
+                                    <div class="channel-icon">📧</div>
+                                    <div class="channel-info">
+                                        <h4>EMAIL</h4>
+                                        <p>hello@hamnah.dev</p>
+                                    </div>
+                                </div>
+                                <div class="contact-channel">
+                                    <div class="channel-icon">💬</div>
+                                    <div class="channel-info">
+                                        <h4>DISCORD</h4>
+                                        <p>hamnah#1234</p>
+                                    </div>
+                                </div>
+                                <div class="contact-channel">
+                                    <div class="channel-icon">🐦</div>
+                                    <div class="channel-info">
+                                        <h4>TWITTER</h4>
+                                        <p>@hamnahcodes</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <div class="pixel-window">
+                        <div class="pixel-window-header">
+                            <div class="window-buttons">
+                                <span class="window-button red"></span>
+                                <span class="window-button yellow"></span>
+                                <span class="window-button green"></span>
+                            </div>
+                            <div class="window-title">CONTACT_ME.exe</div>
+                        </div>
+                        <div class="pixel-window-body">
+                            <form id="contact-form" class="pixel-form">
+                                <div class="form-group">
+                                    <label for="name" class="pixel-label">NAME</label>
+                                    <input type="text" id="name" name="name" class="pixel-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email" class="pixel-label">EMAIL</label>
+                                    <input type="email" id="email" name="email" class="pixel-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message" class="pixel-label">MESSAGE</label>
+                                    <textarea id="message" name="message" class="pixel-input pixel-textarea" required></textarea>
+                                </div>
+                                
+                                <div class="form-submit">
+                                    <button type="submit" class="pixel-button">
+                                        <span class="button-text">SEND</span>
+                                    </button>
+                                </div>
+                                
+                                <div class="form-status">
+                                    <div class="status-message success">Message sent successfully!</div>
+                                    <div class="status-message error">Error sending message. Please try again.</div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 HAMNAH ANSARI // ALL RIGHTS RESERVED</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">GH</a>
+                    <a href="#" class="social-link">TW</a>
+                    <a href="#" class="social-link">LI</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="projects-script.js"></script>
+    <script src="contact-script.js"></script>
+
+</body>
+</html>

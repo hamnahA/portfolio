@@ -1,0 +1,392 @@
+/* Contact Section */
+
+/* Compact title styling */
+.compact-title {
+  margin-bottom: 1rem;
+}
+
+.compact-title .section-title {
+  margin-bottom: 0;
+}
+
+.contact {
+  padding: 3rem 0 5rem;
+  position: relative;
+}
+
+.contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 1.5rem;
+}
+
+/* Contact Info */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-channels {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-channel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--surface);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  transition: var(--transition);
+}
+
+.contact-channel:hover {
+  transform: translateX(10px);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-hover);
+}
+
+.channel-icon {
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--surface-accent);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.channel-info h4 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.9rem;
+  color: var(--primary);
+  margin-bottom: 0.3rem;
+  letter-spacing: 1px;
+}
+
+.channel-info p {
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+/* Pixel Art Contact Form */
+.contact-form-container {
+  position: relative;
+}
+
+.pixel-window {
+  background-color: var(--surface);
+  border: 4px solid #3a7e7e;
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  overflow: hidden;
+  position: relative;
+  image-rendering: pixelated;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transform: perspective(1000px) rotateY(-5deg);
+  transition: transform 0.5s ease;
+}
+
+.pixel-window:hover {
+  transform: perspective(1000px) rotateY(0deg);
+}
+
+.pixel-window::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.pixel-window::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.1) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.3;
+}
+
+.pixel-window-header {
+  background-color: #3a7e7e;
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 4px solid #3a7e7e;
+}
+
+.window-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.window-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.window-button.red {
+  background-color: #ff5f56;
+}
+
+.window-button.yellow {
+  background-color: #ffbd2e;
+}
+
+.window-button.green {
+  background-color: #27c93f;
+}
+
+.window-title {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1rem;
+  color: var(--text);
+  letter-spacing: 2px;
+  text-align: center;
+  flex-grow: 1;
+  margin-left: -80px; /* Offset to center the title */
+}
+
+.pixel-window-body {
+  padding: 1.5rem;
+  background-color: var(--background);
+}
+
+.pixel-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.pixel-label {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1rem;
+  color: #a0e0e0;
+  letter-spacing: 2px;
+}
+
+.pixel-input {
+  background-color: var(--surface);
+  border: 2px solid #3a7e7e;
+  color: var(--text);
+  padding: 0.8rem;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  outline: none;
+  position: relative;
+}
+
+.pixel-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.pixel-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.form-submit {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.pixel-button {
+  background-color: #3a7e7e;
+  border: none;
+  color: var(--text);
+  font-family: "Orbitron", sans-serif;
+  font-size: 1rem;
+  padding: 0.8rem 2.5rem;
+  cursor: pointer;
+  letter-spacing: 2px;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 0px #2a5e5e;
+  transform: translateY(-2px);
+}
+
+.pixel-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), transparent 50%, rgba(0, 0, 0, 0.1));
+  pointer-events: none;
+}
+
+.pixel-button:hover {
+  background-color: var(--primary);
+  box-shadow: 0px 4px 0px #008b8b;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.pixel-button:active {
+  transform: translateY(2px);
+  box-shadow: 0px 0px 0px #2a5e5e;
+}
+
+.form-status {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.status-message {
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  display: none;
+}
+
+.status-message.success {
+  background-color: rgba(39, 201, 63, 0.1);
+  color: #27c93f;
+  border: 1px solid rgba(39, 201, 63, 0.3);
+}
+
+.status-message.error {
+  background-color: rgba(255, 95, 86, 0.1);
+  color: #ff5f56;
+  border: 1px solid rgba(255, 95, 86, 0.3);
+}
+
+/* Glitch effect for the form */
+@keyframes glitch-form {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.pixel-window:hover::before {
+  animation: glitch-form 0.5s infinite;
+}
+
+/* Scanner line effect */
+.pixel-window::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--primary) 20%,
+    var(--secondary) 50%,
+    var(--primary) 80%,
+    transparent 100%
+  );
+  box-shadow: 0 0 15px var(--primary);
+  opacity: 0;
+  z-index: 3;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.pixel-window:hover::after {
+  opacity: 0.7;
+  animation: scan 4s linear infinite;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-info {
+    order: 2;
+  }
+
+  .contact-form-container {
+    order: 1;
+  }
+}
+
+@media (max-width: 576px) {
+  .pixel-window {
+    transform: none;
+  }
+
+  .window-title {
+    margin-left: 0;
+    font-size: 0.8rem;
+  }
+
+  .pixel-window-body {
+    padding: 1.5rem;
+  }
+
+  .contact-channel {
+    padding: 0.8rem;
+  }
+
+  .channel-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+  }
+}
